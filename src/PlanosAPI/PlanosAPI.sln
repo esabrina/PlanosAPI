@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlanosAPI", "PlanosAPI.csproj", "{DA930F6B-6EA3-44FC-AF5E-A5EF0770B991}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanosAPI.Test", "..\PlanosAPI.Test\PlanosAPI.Test.csproj", "{14B98833-6253-4D85-9EB4-7BB5F3DEDD56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA930F6B-6EA3-44FC-AF5E-A5EF0770B991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA930F6B-6EA3-44FC-AF5E-A5EF0770B991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA930F6B-6EA3-44FC-AF5E-A5EF0770B991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA930F6B-6EA3-44FC-AF5E-A5EF0770B991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B98833-6253-4D85-9EB4-7BB5F3DEDD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B98833-6253-4D85-9EB4-7BB5F3DEDD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B98833-6253-4D85-9EB4-7BB5F3DEDD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B98833-6253-4D85-9EB4-7BB5F3DEDD56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AF6F4AF-0DB9-42AC-8567-6F99AD7457BF}
+	EndGlobalSection
+EndGlobal
