@@ -4,7 +4,7 @@ Web API para controle de planos de telefonia.
 
 A aplicação assume que já existe uma base com os dados de sustentação como operadora, DDD e tipo de plano. Para simularmos o uso da API, criamos uma carga de teste inicial com alguns desses dados (numa situação real, tais dados seriam consumidos ou acessados pela nossa API).  Logo, o foco da API é o CRUD do plano de telefonia.
 
-A API foi construída em .NET Core usando o in-memory database. Como fazemos uso do Entity, será simples utilizá-la com outra base de dados. A API faz uso do OData (Open Data Protocol),  um protocolo que agiliza a criação e flexibiliza o consumo de serviços RESTful (possibilitando que filtros e paginação sejam implementos pelo frontend   pelo . Importante, a API está configurada para rodar em container para LINUX.
+A API foi construída em .NET Core usando o in-memory database. Como fazemos uso do Entity, será simples utilizá-la com outra base de dados. A API faz uso do OData (Open Data Protocol),  um protocolo que agiliza a criação e flexibiliza o consumo de serviços RESTful (possibilitando que filtros e paginação sejam implementados pelo frontend sem necessitar de customização na API). Importante, a API está configurada para rodar em container para LINUX.
 
 # Principais Serviços
 
@@ -60,9 +60,11 @@ Para mais exemplos de consumo do serviço, consulte o arquivo "Utilizacao.pdf" n
 
 ## Container
 API está configurada para rodar em container para LINUX. 
-1 - Gere a imagem do container (docker build)
-2 - Rode o docker (Ex.: docker run --rm -it -p 5000:80 planoapi:latest)
-3 - Acessar a API pelo browser (Ex.: http://<< IP virtual machine >>:5000/api/plano)
+
+ - Gere a imagem do container (docker build)	
+ - Rode o docker (Ex.: docker run --rm -it -p 5000:80 planoapi:latest)
+ - Acessar a API pelo browser (Ex.: http://<< IP virtual machine >>:5000/api/plano)
+
 
 
 
