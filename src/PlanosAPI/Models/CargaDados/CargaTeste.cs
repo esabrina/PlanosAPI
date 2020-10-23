@@ -25,6 +25,7 @@ namespace PlanosAPI.Models
                 // DDD
                 List<PlanoDDD> list_planoddd1 = new List<PlanoDDD>();
                 List<PlanoDDD> list_planoddd2 = new List<PlanoDDD>();
+                List<PlanoDDD> list_planoddd3 = new List<PlanoDDD>();
                 var _021 = context.DDDs.Add(new DDD { Codigo = "021" }).Entity;
                 var _027 = context.DDDs.Add(new DDD { Codigo = "027" }).Entity;
                 var _011 = context.DDDs.Add(new DDD { Codigo = "011" }).Entity;
@@ -44,7 +45,7 @@ namespace PlanosAPI.Models
                     Minutos = 100,
                     Franquia = 5,
                     UnidadeFranquia = "GB",
-                    Valor = Convert.ToDouble("99,99"),
+                    Valor = Convert.ToDouble("99"),
                     IdTipoPlano = t1.Id,
                     TipoPlano = t1,
                     IdOperadora = o1.Id,
@@ -56,15 +57,26 @@ namespace PlanosAPI.Models
                     Minutos = 50,
                     Franquia = 2,
                     UnidadeFranquia = "GB",
-                    Valor = Convert.ToDouble("59,00"),
+                    Valor = Convert.ToDouble("59"),
                     IdTipoPlano = t2.Id,
                     TipoPlano = t2,
                     IdOperadora = o1.Id,
                     Operadora = o1,
                     PlanoDDD = null
                 }).Entity;
-
-                var pddd1 = context.PlanosDDDs.Add(new PlanoDDD
+            var p3 = context.Planos.Add(new Plano
+            {
+                Minutos = 120,
+                Franquia = 8,
+                UnidadeFranquia = "GB",
+                Valor = Convert.ToDouble("110"),
+                IdTipoPlano = t2.Id,
+                TipoPlano = t3,
+                IdOperadora = o1.Id,
+                Operadora = o1,
+                PlanoDDD = null
+            }).Entity;
+            var pddd1 = context.PlanosDDDs.Add(new PlanoDDD
                 {
                     DDD = _021,
                     Plano = p1
@@ -79,12 +91,19 @@ namespace PlanosAPI.Models
                     DDD = _011,
                     Plano = p2
                 }).Entity;
+                var pddd4 = context.PlanosDDDs.Add(new PlanoDDD
+                {
+                    DDD = _021,
+                    Plano = p3
+                }).Entity;
 
                 list_planoddd1.Add(pddd1);
                 list_planoddd2.Add(pddd2);
                 list_planoddd2.Add(pddd3);
+                list_planoddd3.Add(pddd4);
                 p1.PlanoDDD = list_planoddd1;
                 p2.PlanoDDD = list_planoddd2;
+                p3.PlanoDDD = list_planoddd3;
 
                 context.SaveChanges();
         }

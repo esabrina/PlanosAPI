@@ -10,25 +10,32 @@ using Xunit;
 
 namespace PlanosAPI.Test
 {
-    public class PlanoControllerTest
+    public class PlanoControllerTest : IDisposable
     {
         PlanoController _controller;
+        PlanoDBContext _contextTest;
 
         public PlanoControllerTest()
         {
             var options = new DbContextOptionsBuilder<PlanoDBContext>()
                 .UseInMemoryDatabase(databaseName: "PlanosDB").Options;
 
-            //Mock DBContext
             var context = new PlanoDBContext(options);
             if (!context.Planos.Any())
             {
                 CargaTeste.Populate(ref context);
             }
 
+            _contextTest = context;
             var _repo = new PlanoRepository(context);
             _controller = new PlanoController(_repo, context);
         }
+        public void Dispose()
+        {
+            _contextTest.Database.EnsureDeleted();
+            _contextTest.Dispose();
+        }
+
         [Fact]
         public void InsertOKTest()
         {
@@ -246,5 +253,6 @@ namespace PlanosAPI.Test
 
             Assert.True(string.IsNullOrEmpty(result));
         }
+
     }
 }
