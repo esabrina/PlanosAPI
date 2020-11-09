@@ -52,13 +52,6 @@ namespace PlanosAPI.Repositories
 
         public IQueryable<Plano> GetByDDD(string ddd)
         {
-            var p2 = _context.Planos.
-                Include(i => i.Operadora).
-                Include(i => i.TipoPlano).
-                Include(i => i.PlanoDDD).
-                SelectMany(m => m.PlanoDDD.Where(d => d.CodigoDDD == ddd),
-                (m, f) => new { m });
-
             IQueryable<Plano> result;
             var _query = (from z in _context.Planos.
               Include(i => i.Operadora).Include(i => i.TipoPlano).Include(i => i.PlanoDDD)
